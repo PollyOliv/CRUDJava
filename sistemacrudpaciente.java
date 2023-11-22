@@ -24,13 +24,16 @@ public class sistemacrudpaciente {
         System.out.println("Digite o nome do paciente: ");
         String nome = input.nextLine();
         System.out.println("Digite o CPF do paciente: ");
-        double cpf = input.nextDouble();
+        String cpf = input.nextLine();
+        System.out.println("Digite o e-mail do paciente: ");
+        String email = input.nextLine();
         System.out.println("Digite o telefone do paciente: ");
         double telefone = input.nextDouble();
         input.nextLine();
         Paciente p = new Paciente();
         p.nome = nome; 
         p.cpf = cpf;
+        p.email = email;
         p.telefone = telefone; 
         p.id = indice + 1;
         pacientes[indice] = p;
@@ -46,6 +49,7 @@ public class sistemacrudpaciente {
                 System.out.println("Produto Encontrado");
                 System.out.println("Nome: " + p.nome);
                 System.out.println("CPF: "+ p.cpf);
+                System.out.println("CPF: "+ p.email);
                 System.out.println("Telefone: "+ p.telefone);
                 break;
             }
@@ -61,7 +65,9 @@ public class sistemacrudpaciente {
                 System.out.println("Digite o novo nome do paciente: ");
                 p.nome = input.nextLine();
                 System.out.println("Digite o novo CPF do paciente: ");
-                p.cpf = input.nextDouble();
+                p.cpf = input.nextLine();
+                System.out.println("Digite o novo e-mail do paciente: ");
+                p.email = input.nextLine();
                 System.out.println("Digite o novo telefone do paciente: ");
                 p.telefone = input.nextDouble();
                 input.nextLine();
@@ -83,11 +89,11 @@ public class sistemacrudpaciente {
   }
 
   public static void listar(){
-  System.out.println("Nome\t\tCPF\t\tTelefone");
+  System.out.println("Nome\t\tCPF\t\tE-mail\t\t\tTelefone");
        for(int i = 0; i<indice; i++){
            Paciente p = pacientes[i];
            if( p != null){
-               System.out.println(p.nome + "\t\t" + p.cpf + "\t\t" + p.telefone);
+               System.out.println(p.nome + "\t\t" + p.cpf + "\t\t" + p.email + "\t\t" + p.telefone);
                
            }
            
